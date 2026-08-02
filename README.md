@@ -89,12 +89,13 @@ Open any tutorial notebook and run it top to bottom. Each notebook automatically
 
 ```
 PINN_for_Mechanical_Engineer/
-├── tutorial1_lid_driven_cavity/
-├── tutorial2_heat_conduction/
-├── tutorial3_elasticity_plate_hole/
-├── tutorial4_natural_convection/
-├── tutorial5_euler_bernoulli_beam/
-├── ...
+├── PME_Tutorial_01/PME_Tutorial_01_lid_driven_cavity.ipynb/
+├── PME_Tutorial_02/PME_Tutorial_02_heat_conduction.ipynb/
+├── PME_Tutorial_03/PME_Tutorial_03_linear_elasticity.ipynb/
+├── PME_Tutorial_04/PME_Tutorial_04_natural_convection.ipynb/
+├── PME_Tutorial_05/PME_Tutorial_05_euler_bernoulli_beam.ipynb/
+├── PME_Tutorial_06/PME_Tutorial_06_backward_facing_step.ipynb
+├── PME_Tutorial_07/PME_Tutorial_07_vortex_shedding.ipynb
 └── README.md
 ```
 
@@ -139,7 +140,7 @@ New to PINNs, or want the build-it-from-scratch treatment in one place? **[*PINN
 If this series is useful in your work or teaching, a link back is appreciated:
 
 ```
-Rohit Raj, "PINNs for Mechanical Engineers," HalfQubiX, 2025.
+Rohit Raj, "PINNs for Mechanical Engineers," HalfQubiX, 2026.
 https://github.com/rraj-io/PINN_for_Mechanical_Engineer
 ```
 
