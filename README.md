@@ -21,15 +21,15 @@ The series assumes you're comfortable with the PINN fundamentals (autograd, coll
 
 ## The Series
 
-| # | Tutorial | Focus | Reference | Status |
-|---|----------|-------|-----------|--------|
-| 1 | **2D Navier–Stokes — Lid-Driven Cavity** | coupled, nonlinear flow; pressure gauge | Ghia, Ghia & Shin (1982) | ✅ |
-| 2 | **2D Steady Heat Conduction** | mixed Dirichlet/Neumann BCs | analytical (separation of variables) | ✅ |
-| 3 | **Linear Elasticity — Plate with a Hole** | vector fields; stress via autograd; stress concentration | Kirsch (1898) | ✅ |
-| 4 | **Natural Convection — Buoyant Cavity** | multiphysics coupling; stream-function/vorticity; hard constraints | de Vahl Davis (1983); Fowler, McDevitt & Roy (2024) | ✅ |
-| 5 | **Euler–Bernoulli Beam** | 4th-order derivatives; hard-constrained BCs | analytical (Euler–Bernoulli) | ✅ |
-| 6 | **Backward-Facing Step** | flow separation & reattachment | Armaly et al. (1983) | ✅ |
-| 7 | **Unsteady Vortex Shedding — Cylinder Wake** | unsteady flow; data assimilation; the failure modes | Schäfer & Turek (1996); Raissi et al. (2019) | ✅ |
+| # | Tutorial | Focus | Reference |
+|---|----------|-------|-----------|
+| 1 | **2D Navier–Stokes — Lid-Driven Cavity** | coupled, nonlinear flow; pressure gauge | Ghia, Ghia & Shin (1982) |
+| 2 | **2D Steady Heat Conduction** | mixed Dirichlet/Neumann BCs | analytical (separation of variables) |
+| 3 | **Linear Elasticity — Plate with a Hole** | vector fields; stress via autograd; stress concentration | Kirsch (1898) |
+| 4 | **Natural Convection — Buoyant Cavity** | multiphysics coupling; stream-function/vorticity; hard constraints | de Vahl Davis (1983); Fowler, McDevitt & Roy (2024) |
+| 5 | **Euler–Bernoulli Beam** | 4th-order derivatives; hard-constrained BCs | analytical (Euler–Bernoulli) |
+| 6 | **Backward-Facing Step** | flow separation & reattachment | Armaly et al. (1983) |
+| 7 | **Transient Backward-Facing Step** | unsteady flow; transient condition| Schäfer & Turek (1996); Raissi et al. (2019) |
 
 Each tutorial is standalone — you can start anywhere — but the difficulty and the ideas build across the series.
 
@@ -49,8 +49,7 @@ Each tutorial is standalone — you can start anywhere — but the difficulty an
 
 **Tutorial 6 — Backward-Facing Step.** Back to fluids, and the last "well-behaved" one: steady, laminar internal flow over a sudden expansion — the classic geometry behind diffusers, sudden pipe enlargements, combustor dumps, and HVAC ducts. As the flow passes the step it **separates** from the wall and **reattaches** downstream, enclosing a recirculation bubble the network has to discover rather than be told about. The validation target is a single clean scalar — the **reattachment length** as a function of Reynolds number — checked against the Armaly et al. (1983) experiments, where it grows roughly linearly in the laminar regime.
 
-**Tutorial 7 — Unsteady Vortex Shedding.** The capstone, and the hardest problem in the series. Flow past a circular cylinder at Re ≈ 100 sheds the alternating von Kármán vortex street — an *unsteady*, time-dependent flow (time enters as an extra input coordinate). This is where the honesty of the series pays off: a **pure forward PINN fails** here, converging to the unstable *symmetric* steady wake (which also satisfies the equations) instead of developing the oscillating shedding. The fix — and the tutorial's real subject — is **data assimilation**: feeding the network a handful of observations to break the symmetry, exactly as in the celebrated Raissi et al. (2019) cylinder result. Validated against the Schäfer & Turek (1996) benchmark (drag/lift coefficients, Strouhal number St ≈ 0.2). The finale delivers the series' central thesis: forward PINNs often lose to classical CFD, but *this* — assimilating sparse data into full-field, differentiable physics — is where they genuinely earn their keep.
-
+**Tutorial 7 — Transient Backward-Facing Step.** 
 ---
 
 ## Getting Started
