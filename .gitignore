@@ -3,6 +3,10 @@
 *.jpeg 
 *.png
 
+# ignore pdf and gif 
+*.pdf
+*.gif
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
