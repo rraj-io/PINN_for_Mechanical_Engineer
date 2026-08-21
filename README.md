@@ -41,7 +41,7 @@ Ten tutorials in two parts. **Part I** builds forward-solving skill across every
 |---|----------|-------|-----------|
 | 8 | **The Inverse Problem** | recovering unknown physics from sparse noisy sensors | Raissi et al. (2019); manufactured solution |
 | 9 | **The Parametric PINN** | one network for a family of solutions; sensitivities | Sun et al. (2020); analytical (convection–diffusion) |
-| 10 | **Conjugate Heat Transfer** | two domains, one interface; flux continuity | analytical (thermal resistances in series) |
+| 10 | **Multi-Material Heat Conduction** | two domains, one interface; flux continuity | analytical (thermal resistances in series) |
 
 Each tutorial is standalone — you can start anywhere — but the difficulty and the ideas build across the series.
 
@@ -67,7 +67,7 @@ Each tutorial is standalone — you can start anywhere — but the difficulty an
 
 **Tutorial 9 — The Parametric PINN.** The parameter becomes a network *input*, so one training run covers an entire range of operating conditions. The result isn't a solver but a **surrogate**: query any Péclet number in milliseconds, including values never sampled during training, and get **parameter sensitivities** (∂u/∂Pe) straight from autograd — something a mesh solver reaches only by finite-differencing repeated runs. Includes the honest trade: generality bought with precision.
 
-**Tutorial 10 — Conjugate Heat Transfer.** The finale, and the thing mechanical engineers simulate more than almost anything else: a solid cooled by a fluid, where neither domain can be solved without the other. **Two networks, one per material**, coupled only through the two interface conditions — temperature continuity and heat-flux continuity. The true solution has a **kink** at the interface that a single smooth network cannot represent, which is exactly why the two-network approach is the right architecture rather than a convenience.
+**Tutorial 10 — Multi-Material Heat Conduction.** The finale, and the thing mechanical engineers simulate more than almost anything else: a solid cooled by a fluid, where neither domain can be solved without the other. **Two networks, one per material**, coupled only through the two interface conditions — temperature continuity and heat-flux continuity. The true solution has a **kink** at the interface that a single smooth network cannot represent, which is exactly why the two-network approach is the right architecture rather than a convenience.
 
 ---
 
@@ -116,7 +116,7 @@ PINN_for_Mechanical_Engineer/
 ├── PME_Tutorial_07/PME_Tutorial_07_transient_heat_conduction.ipynb
 ├── PME_Tutorial_08/PME_Tutorial_08_inverse_problem.ipynb
 ├── PME_Tutorial_09/PME_Tutorial_09_parametric_pinn.ipynb
-├── PME_Tutorial_10/PME_Tutorial_10_conjugate_heat_transfer.ipynb
+├── PME_Tutorial_10/PME_Tutorial_10_multi_material_heat_conduction.ipynb
 └── README.md
 ```
 
